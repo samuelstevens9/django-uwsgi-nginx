@@ -12,11 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 MAINTAINER Dockerfiles
 
 # Install required packages and remove the apt packages cache when done.
+# libmysqlclient-dev for MySQL
 
 RUN apt-get update && \
     apt-get upgrade -y && \ 	
@@ -26,9 +27,9 @@ RUN apt-get update && \
 	python3-dev \
 	python3-setuptools \
 	python3-pip \
+  libmysqlclient-dev \
 	nginx \
-	supervisor \
-	sqlite3 && \
+	supervisor && \
 	pip3 install -U pip setuptools && \
    rm -rf /var/lib/apt/lists/*
 
