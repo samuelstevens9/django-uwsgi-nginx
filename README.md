@@ -1,5 +1,15 @@
 # Django, uWSGI and Nginx in a container, using Supervisord
 
+# Docker config for your app
+
+Copy `Dockerfile` and `Docker` directory to you django project
+
+change: Docker/uwsgi.ini #29 to your application project name 
+
+
+
+Forked: https://github.com/dockerfiles/django-uwsgi-nginx
+
 This Dockerfile shows you *how* to build a Docker container with a fairly standard
 and speedy setup for Django with uWSGI and Nginx.
 
